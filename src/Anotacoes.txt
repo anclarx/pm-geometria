@@ -1,0 +1,22 @@
+    
+    // classe basica - nao depende de ninguem
+
+    // CLASSE FORMAGEOMETRICA
+    // responsabilidades _______________ colaboracoes
+    // - saber forma/tipo/nome
+    // - calcular area _______________ variacoes area QUAD, RET, TRI CIR
+    // - calcular perimetro ____________ variacoes perimetro QUAD, RET, TRI CIR
+    // - comparar com outra
+
+    // CLASSE POLIGONO
+    // responsabilidades _______________ colaboracoes
+    // - guardar base e altura
+
+    // CLASSE TRIANGULO
+    // responsabilidades _______________ colaboracoes
+    // - calcular hipotenusa
+
+    // CLASSE QUADRADO, RETANGULO, TRIANGULO E CIRCULO
+    // responsabilidades _______________ colaboracoes
+    // - calcular area
+    // - calcular perimetro
