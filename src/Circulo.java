@@ -1,4 +1,4 @@
-/** 
+/**
  * MIT License
  *
  * Copyright(c) 2023-26 João Caram <caram@pucminas.br>
@@ -10,7 +10,8 @@
  * copies of the Software, and to permit persons to whom the Software is
  * furnished to do so, subject to the following conditions:
  *
- * The above copyright notice and this permission notice shall be included in all
+ * The above copyright notice and this permission notice shall be included in
+ * all
  * copies or substantial portions of the Software.
  *
  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
@@ -22,46 +23,48 @@
  * SOFTWARE.
  */
 
-
-public class Circulo extends FormaGeometrica{
+public class Circulo extends FormaGeometrica {
     private double raio;
-    
+
     /**
      * Construtor. O raio mínimo do círculo é 1.
+     * 
      * @param raio Raio do círculo. Valores menores que 1 são convertidos em 1.
      */
-    public Circulo(double raio){
-        super("CIRCULO");
-        if(raio <= 1d)
+    public Circulo(double raio) {
+        super("Circulo");
+        if (raio <= 1d)
             raio = 1d;
         this.raio = raio;
     }
 
-   
     /**
      * Calcula e retorna a área do círculo
+     * 
      * @return Área do círculo (double)
      */
     @Override
-    public double area(){
-        //TODO
+    public double area() {
+        return Math.PI * Math.pow(raio, 2);
     }
 
     /**
      * Calcula e retorna o perímetro do círculo
+     * 
      * @return Perímetro do círculo (double)
      */
     @Override
-    public double perimetro(){
-        //TODO
+    public double perimetro() {
+        return 2 * Math.PI * raio;
     }
 
     /**
      * Retorna a String com a descrição do círculo (descrição, área e raio)
+     * 
      * @return String com a descrição conforme especificado.
      */
     @Override
-    public String toString(){
-        return super.toString() + String.format(" | Raio: %.4f.",raio);
+    public String toString() {
+        return super.toString() + String.format(" | Raio: %.4f.", raio);
     }
 }

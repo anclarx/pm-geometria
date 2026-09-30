@@ -22,42 +22,48 @@
  * SOFTWARE.
  */
 
- /** Classe para representação de um Quadrado */
-public class Quadrado extends PoligonoReto{
- 
+/** Classe para representação de um Quadrado */
+public class Quadrado extends PoligonoReto {
+
     /**
-     * Construtor: recebe um lado que será propagado para base e altura. A classe-mãe valida o lado como pelo menos 1.
-     * @param lado Lado para o quadrado. Valor deve ser igual ou maior a 1, ou será corrigido para 1.
+     * Construtor: recebe um lado que será propagado para base e altura. A
+     * classe-mãe valida o lado como pelo menos 1.
+     * 
+     * @param lado Lado para o quadrado. Valor deve ser igual ou maior a 1, ou será
+     *             corrigido para 1.
      */
-    public Quadrado(double lado){
-        //TODO
+    public Quadrado(double lado) {
+        super("Quadrado", lado, lado);
     }
 
     /**
      * Calcula e retorna a área do quadrado
+     * 
      * @return Área do quadrado (double)
      */
     @Override
-    public double area(){
-        //TODO
+    public double area() {
+        return Math.pow(base, 2);
     }
 
     /**
      * Calcula e retorna o perímetro do quadrado
+     * 
      * @return Perímetro do quadrado (double)
      */
     @Override
-    public double perimetro(){
-        //TODO
+    public double perimetro() {
+        return base * 4;
     }
 
     /**
      * Representação em string do quadrado: descrição, área e lado.
+     * 
      * @return String com a descrição acima
      */
     @Override
-    public String toString(){
-        return super.toString() + String.format(" | Lado: %.4f.",base);
+    public String toString() {
+        return super.toString() + String.format(" | Lado: %.4f.", base);
     }
 
 }

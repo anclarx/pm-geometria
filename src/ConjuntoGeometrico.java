@@ -1,3 +1,4 @@
+
 /** 
  * MIT License
  *
@@ -31,59 +32,64 @@ public class ConjuntoGeometrico {
 	private List<FormaGeometrica> formas;
 	int capacidade;
 
-    /**
-     * Cria um conjunto vazio de formas. A capacidade mínima do conjunto é 2.
-     * @param capacidade Capacidade do conjunto. Valores menores que 2 viram 2.
-     */
+	/**
+	 * Cria um conjunto vazio de formas. A capacidade mínima do conjunto é 2.
+	 * 
+	 * @param capacidade Capacidade do conjunto. Valores menores que 2 viram 2.
+	 */
 	public ConjuntoGeometrico(int capacidade) {
-		if(capacidade <2) 
+		if (capacidade < 2)
 			capacidade = 2;
 		this.capacidade = capacidade;
 		formas = new ArrayList<>(this.capacidade);
 	}
 
-    /**
-     * Retorna a forma com a maior área dentro do conjunto. Pode retornar nulo, se o conjunto estiver vazio.
-     * @return A forma com a maior área do conjunto, ou nulo se ele estiver vazio.
-     */
+	/**
+	 * Retorna a forma com a maior área dentro do conjunto. Pode retornar nulo, se o
+	 * conjunto estiver vazio.
+	 * 
+	 * @return A forma com a maior área do conjunto, ou nulo se ele estiver vazio.
+	 */
 	public FormaGeometrica maiorArea() {
 		FormaGeometrica maior = null;
-		if(formas.size() > 0){
+		if (formas.size() > 0) {
 			maior = formas.get(0);
-        	for (int i = 1; i < capacidade; i++) {
-            	if(formas.get(i).temAreaMaiorQue(maior))
-                	maior = formas.get(i);
-        	}
+			for (int i = 1; i < capacidade; i++) {
+				if (formas.get(i).temAreaMaiorQue(maior))
+					maior = formas.get(i);
+			}
 		}
 		return maior;
 	}
 
-    /**
-     * Caso tenha espaço, armazena uma forma no conjunto. Caso contrário, a operação é ignorada.
-     * @param nova A forma a ser armazenada.
+	/**
+	 * Caso tenha espaço, armazena uma forma no conjunto. Caso contrário, a operação
+	 * é ignorada.
+	 * 
+	 * @param nova A forma a ser armazenada.
 	 * @return Quantidade de formas no conjunto.
-     */
+	 */
 	public int addForma(FormaGeometrica nova) {
-		if(capacidade > formas.size()){
+		if (capacidade > formas.size()) {
 			formas.add(nova);
 		}
-		return  formas.size();
-		
+		return formas.size();
+
 	}
 
-	
-    /**
-     * Representação do conjunto em String: cabeçalho informando a quantidade de formas do conjunto
-     * e em seguida uma linha para descrição de cada forma.
-     * @return String com a representação informada acima.
-     */
+	/**
+	 * Representação do conjunto em String: cabeçalho informando a quantidade de
+	 * formas do conjunto
+	 * e em seguida uma linha para descrição de cada forma.
+	 * 
+	 * @return String com a representação informada acima.
+	 */
 	@Override
 	public String toString() {
-		StringBuilder relat = new StringBuilder("CONJUNTO COM "+capacidade+" FORMAS GEOMÉTRICAS:\n");
+		StringBuilder relat = new StringBuilder("CONJUNTO COM " + capacidade + " FORMAS GEOMÉTRICAS:\n");
 		for (FormaGeometrica forma : formas) {
-			if(forma!=null)
-            	relat.append(forma+"\n");
-        }
+			relat.append(forma + "\n");
+		}
 		return relat.toString();
 	}
 

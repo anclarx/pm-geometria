@@ -22,42 +22,49 @@
  * SOFTWARE.
  */
 
- /** Classe para representar a forma Retângulo */
-public class Retangulo extends PoligonoReto{
-    
+/** Classe para representar a forma Retângulo */
+public class Retangulo extends PoligonoReto {
+
     /**
-     * Construtor: recebe base e altura. A classe-mãe valida ambos valores para o mínimo de 1
-     * @param base Base para o retângulo. Valor deve ser igual ou maior a 1, ou será corrigido para 1.
-     * @param altura Altura para o retângulo. Valor deve ser igual ou maior a 1, ou será corrigido para 1.
+     * Construtor: recebe base e altura. A classe-mãe valida ambos valores para o
+     * mínimo de 1
+     * 
+     * @param base   Base para o retângulo. Valor deve ser igual ou maior a 1, ou
+     *               será corrigido para 1.
+     * @param altura Altura para o retângulo. Valor deve ser igual ou maior a 1, ou
+     *               será corrigido para 1.
      */
-    public Retangulo(double base, double altura){
-        
+    public Retangulo(double base, double altura) {
+        super("Retangulo", base, altura);
     }
 
     /**
      * Calcula e retorna a área do retângulo
+     * 
      * @return Área do retângulo (double)
      */
     @Override
-    public double area(){
-        //TODO
+    public double area() {
+        return base * altura;
     }
 
     /**
      * Calcula e retorna o perímetro do retângulo
+     * 
      * @return Perímetro do retângulo (double)
      */
     @Override
-    public double perimetro(){
-        //TODO
+    public double perimetro() {
+        return 2 * (base + altura);
     }
 
     /**
      * Representação em string do retângulo: descrição, área, base, altura.
+     * 
      * @return String com a descrição acima
      */
     @Override
-    public String toString(){
-        return super.toString() + String.format(" | Base %.4f e Altura %.4f.",base, altura);
+    public String toString() {
+        return super.toString() + String.format(" | Base %.4f e Altura %.4f.", base, altura);
     }
 }

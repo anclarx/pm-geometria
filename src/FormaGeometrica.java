@@ -22,55 +22,63 @@
  * SOFTWARE.
  */
 
- /** Classe abstrata para representação de formas geomérticas */
+/** Classe abstrata para representação de formas geomérticas */
 public abstract class FormaGeometrica {
-    
+
     private String descricao;
 
     /**
      * Construtor protegido (só é usado pelas classes descendentes)
-     * @param descricao A descrição da forma geométrica. Não faz validação da descrição
+     * 
+     * @param descricao A descrição da forma geométrica. Não faz validação da
+     *                  descrição
      */
-    protected FormaGeometrica(String descricao){
+    protected FormaGeometrica(String descricao) {
         this.descricao = descricao;
     }
 
     /**
      * Retorna a área da forma geométrica.
+     * 
      * @return Double com a área da forma geométrica instanciada
      */
     public abstract double area();
 
     /**
      * Retorna o perímetro da forma geométrica.
+     * 
      * @return Double com o perímetro da forma geométrica instanciada
      */
     public abstract double perimetro();
 
-    public boolean temAreaMaiorQue(FormaGeometrica outra){
-        //TODO
+    public boolean temAreaMaiorQue(FormaGeometrica outra) {
+        return this.area() > outra.area();
     }
 
     /**
      * Representação em string da forma: descrição e área.
+     * 
      * @return String com a descrição e a área da forma instanciada.
      */
     @Override
-    public String toString(){
+    public String toString() {
         return String.format("%s com área de %.4f.", descricao, area());
     }
 
     /**
-     * Igualdade da forma geométrica: mesma descrição e mesma área. Causa erro se o parâmetro de comparação não for uma Forma.
-     * @param obj A forma a ser comparada com esta. Causa erro se o parâmetro de comparação não for uma Forma.
-     * @return boolean TRUE se ambas têm mesma descrição e área, FALSE caso contário.
+     * Igualdade da forma geométrica: mesma descrição e mesma área. Causa erro se o
+     * parâmetro de comparação não for uma Forma.
+     * 
+     * @param obj A forma a ser comparada com esta. Causa erro se o parâmetro de
+     *            comparação não for uma Forma.
+     * @return boolean TRUE se ambas têm mesma descrição e área, FALSE caso
+     *         contário.
      */
     @Override
-    public boolean equals(Object obj){
-        FormaGeometrica outra = (FormaGeometrica)obj;
-        return ( this.descricao.equals(outra.descricao) &&
-                 this.area() == outra.area()
-                );
+    public boolean equals(Object obj) {
+        FormaGeometrica outra = (FormaGeometrica) obj;
+        return (this.descricao.equals(outra.descricao) &&
+                this.area() == outra.area());
     }
-    
+
 }

@@ -22,51 +22,59 @@
  * SOFTWARE.
  */
 
- /** Representação de uma forma Triângulo Retângulo */
-public class TrianguloRetangulo extends PoligonoReto{
-    
+/** Representação de uma forma Triângulo Retângulo */
+public class TrianguloRetangulo extends PoligonoReto {
+
     /**
-     * Construtor: recebe os catetos. A classe-mãe valida ambos valores para o mínimo de 1
-     * @param cateto1 Cateto para o triângulo. Valor deve ser igual ou maior a 1, ou será corrigido para 1.
-     * @param cateto2 Cateto para o triângulo. Valor deve ser igual ou maior a 1, ou será corrigido para 1.
+     * Construtor: recebe os catetos. A classe-mãe valida ambos valores para o
+     * mínimo de 1
+     * 
+     * @param cateto1 Cateto para o triângulo. Valor deve ser igual ou maior a 1, ou
+     *                será corrigido para 1.
+     * @param cateto2 Cateto para o triângulo. Valor deve ser igual ou maior a 1, ou
+     *                será corrigido para 1.
      */
-    public TrianguloRetangulo(double cateto1, double cateto2){
-        //TODO
+    public TrianguloRetangulo(double cateto1, double cateto2) {
+        super("TrianguloRetangulo", cateto1, cateto2);
     }
 
     /**
      * Calcula e retorna a área do triângulo
+     * 
      * @return Área do triângulo (double)
      */
     @Override
-    public double area(){
-        //TODO
+    public double area() {
+        return (base * altura) / 2;
     }
 
     /**
      * Calcula e retorna o perímetro do triângulo
+     * 
      * @return Perímetro do triângulo (double)
      */
     @Override
-    public double perimetro(){
-        //TODO
+    public double perimetro() {
+        return base + altura + hipotenusa();
     }
 
     /**
      * Método interno. Calcula a hipotenusa para cálculo do perímetro.
+     * 
      * @return Hipotenusa do triângulo (double)
      */
-    private double hipotenusa(){
-        double soma = Math.pow(altura, 2) + Math.pow(base, 2); 
+    private double hipotenusa() {
+        double soma = Math.pow(altura, 2) + Math.pow(base, 2);
         return Math.sqrt(soma);
     }
 
     /**
      * Representação em string do quadrado: descrição, área e os 3 lados.
+     * 
      * @return String com a descrição acima
      */
     @Override
-    public String toString(){
-        return super.toString() + String.format(" | Lados: %.4f, %.4f e %.4f.",base, altura, hipotenusa());
+    public String toString() {
+        return super.toString() + String.format(" | Lados: %.4f, %.4f e %.4f.", base, altura, hipotenusa());
     }
 }
